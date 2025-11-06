@@ -1,298 +1,341 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Welcome to my portfolio website! Explore my projects, skills, and experiences in web development and design.">
-<meta name="keywords" content="Portfolio, Web Development, Projects, Skills, Experience, Design">
-<meta name="author" content="Marvellous Ediagbonya">
-<meta name="robots" content="index, follow">
-<!-- Open graphs | social media contents -->
-<meta content="Marvellous Portfolio" property="og:title">
-<meta property="og:type" content="website">
-<meta content="http://www.yourwebsite.com/thumbnail.jpg" property="og:image" >
-<meta property="og:url" content="http://www.yourwebsite.com">
-<meta property="og:description" content="Welcome to my portfolio website! Explore my projects, skills, and experiences in web development and design.">
-<!-- Twitter open graph -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://www.yourwebsite.com/thumbnail.jpg">
-<meta name="twitter:title" content="MY PORTFOLIO | HOME">
-<meta name="twitter:description" content="Welcome to my portfolio website! Explore my projects, skills, and experiences in web development and design.">
- <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Tangerine">
-    
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=html,css,js,palette,settings&display=block" />
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon_io (2)/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon_io (2)/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon_io (2)/favicon-16x16.png">
-<link rel="manifest" href="/favicon_io (2)/site.webmanifest">
-<link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<title> MY PORTFOLIO | HOME</title>
-</head> 
-<body id="body">
-  <a href="#mainContent" class="skip-link" >Skip to main content</a>
-<!-- Header section -->
- <header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Welcome to my portfolio website! Explore my projects, skills, and experiences in web development and design." />
+  <meta name="keywords" content="Portfolio, Web Development, Projects, Skills, Experience, Design" />
+  <meta name="author" content="Marvellous Ediagbonya" />
+  <meta name="robots" content="index, follow" />
 
-    <!-- logo  -->
-<svg width="300" height="40" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="transparent" />
-   <text x="130" y="30"   text-anchor="middle" fill="#ffffff" id="textSvg">MARVELLOUS</text>
-</svg> 
-<!-- darkmode -->
-        <button type="button" class="toggle-container" id="themeToggle" aria-label="Toggle Dark mode" aria-controls="themeToggle" title="Switch background mode">
-            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="false">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="grey" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-        </button>
-         <button type="button" id="hamburgerMenu" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mainNav" title="Menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-     </button>
-        <!-- navigation -->
-     <nav aria-label="Primary navigation" id="mainNav">
-        <ul class="links">
-            <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a href="#skill">Skills</a>
-            </li>
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#project">Projects</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-     </nav>
-    
- </header>
- <!-- main content -->
-  <main id="mainContent"> 
-    <h1>HELLO I'M <br> MARVELLOUS EDIAGBONYA <br> I'M A WEB DEVELOPER</h1>
-<div id="hero">
-    <div class="hero_content">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Marvellous Portfolio" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.yourwebsite.com/thumbnail.jpg" />
+  <meta property="og:url" content="http://www.yourwebsite.com" />
+  <meta property="og:description" content="Welcome to my portfolio website! Explore my projects, skills, and experiences in web development and design." />
 
-<p>
-    I’m an autodidact — someone who learns by doing.
-I’ve been teaching myself design, German, and web development, driven by curiosity and the belief that skill is earned through persistence. I enjoy hunting for resources, experimenting, and figuring things out piece by piece until they make sense.
-</p>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="http://www.yourwebsite.com/thumbnail.jpg" />
+  <meta name="twitter:title" content="MY PORTFOLIO | HOME" />
+  <meta name="twitter:description" content="Welcome to my portfolio website! Explore my projects, skills, and experiences in web development and design." />
 
-<a href="#contact" class="btn"><i class="fa-solid fa-user-tie"></i> Get In Touch</a>
-    </div>
-    <figure class="hero_figure">
-        <img src="/images/me.jpg" alt="My profile picture"   loading="lazy" >
-    </figure>
-</div>
-<section id="skill">
-    <h2>View My Skills</h2>
-    <div id="skillsContainer"  data-aos="fade-in">
-        <div class="skill">
-            <p>HTML</p>
-            <div class="skillbar" data-percent="90"></div>
-        </div>
-        <div class="skill">
-            <p>CSS</p>
-            <div class="skillbar" data-percent="80"></div>
-        </div>
-        <div class="skill">
-            <p>JAVASCRIPT</p>
-            <div class="skillbar" data-percent="50"></div>
-        </div>
-        <div class="skill">
-            <p>Git</p>
-            <div class="skillbar" data-percent="40"></div>
-        </div>
-    </div>
-</section>
-<section id="about">
-     <h2>Who I am</h2>
+  <!-- Fonts & icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=block" />
+  <link rel="stylesheet" href="./styles.css" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io (2)/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io (2)/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io (2)/favicon-16x16.png" />
+  <link rel="manifest" href="/favicon_io (2)/site.webmanifest" />
+
+  <title>MY PORTFOLIO | HOME</title>
+
+  <!-- Small head styles moved here for deterministic SVG text + sr-only helper -->
+  <style>
+    /* SVG logo text style (moved out of inline SVG for maintainability) */
    
-<div class="about_content"  data-aos="fade-in">
-    <figure>
-        <img src="/images/me.jpg" alt="A second picture of me">
-       </figure>
+  </style>
+</head>
+
+<body id="body">
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <!-- ===========================
+       Header
+       =========================== -->
+  <header>
+    <!-- logo -->
+    <a href="#" class="logo" aria-label="Marvellous home" title="Marvellous">
+      <svg width="300" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <rect width="100%" height="100%" fill="transparent" />
+        <!-- the visible wordmark; styling lives in the head -->
+        <text x="110" y="30" text-anchor="middle" id="textSvg">Marvellous</text>
+      </svg>
+    </a>
+
+    <!-- controls container (dark mode + hamburger) -->
+    <div class="controls" role="region" aria-label="Site controls">
+      <!-- Dark mode toggle -->
+      <button
+        id="themeToggle"
+        class="toggle-container"
+        type="button"
+        aria-pressed="false"
+        aria-label="Toggle dark mode"
+        title="Switch background mode">
+        <i class="fa-solid fa-sun sun-icon" aria-label="sun icon"></i>
+        <i class="fa-solid fa-moon moon-icon" aria-label="moon icon"></i>
+      </button>
+
+      <!-- hamburger (mobile nav) -->
+      <button id="hamburgerMenu" class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <!-- navigation -->
+    <nav id="mainNav" aria-label="Primary navigation">
+      <ul class="links" id="ul">
+        <li><a href="#">Home</a></li>
+        <li><a href="#skill">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#project">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===========================
+       Main
+       =========================== -->
+  <main id="mainContent" tabindex="-1">
+    <section class="hero" id="hero">
+      <div class="title hero_content">
+        <h1>MARVELLOUS EDIAGBONYA</h1>
+        <h2 class="titleh2">Hey! I’m Marvellous</h2>
+        <h2 class="titleh2">I’m a Web Developer</h2>
+
+        <p>
+          I’m an autodidact — someone who learns by doing. I’ve been teaching myself design, German, and web
+          development, driven by curiosity and the belief that skill is earned through persistence. I enjoy
+          searching for resources, experimenting, and figuring things out piece by piece until they make sense.
+        </p>
+
+        <div class="getintouch">
+          <a href="#contact" class="btn touchbtn">Get In Touch <i class="fa-solid fa-arrow-right"></i><span class="sr-only">— opens contact form</span></a>
+          <a href="https://web.facebook.com/goodlifebymarveey" class="herobtn" aria-label="Facebook" title="Facebook">
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            <span class="sr-only">Facebook</span>
+          </a>
+          <a href="https://www.linkedin.com/in/marvellous-ediagbonya/" class="herobtn" aria-label="LinkedIn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span>
+          </a>
+          <a href="https://wa.me/2347053902558" class="herobtn" aria-label="WhatsApp" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            <span class="sr-only">WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <figure class="hero_figure" aria-hidden="false">
+        <img src="/images/marveey-removebg-preview.webp" alt="Profile picture of Marvellous" loading="lazy" />
+      </figure>
+    </section>
+
+    <!-- ===========================
+         Skills / Terminal
+         =========================== -->
+    <section id="skill" class="section">
+      <h2>View My Skills</h2>
+
+      <div id="terminal" class="card" aria-labelledby="skill-heading">
+        <pre id="skillTerminal" aria-live="polite" aria-atomic="false"></pre>
+      </div>
+    </section>
+
+    <!-- ===========================
+         About
+         =========================== -->
+    <section id="about" class="section">
+      <h2>Who I am</h2>
+
+      <div class="about_content" data-aos="fade-in">
+        <figure>
+          <img src="/images/me-removebg-preview.webp" alt="A second picture of Marvellous" loading="lazy" />
+        </figure>
+
         <div class="about_text">
-            <p>
-I’ve always been the kind of person who learns by doing.
-As a kid, I used to make my own little light bulbs — wiring LEDs to batteries just to see them glow. I’d fix wall sockets, change lamp holders. I didn’t think of it as “learning” back then; I was just curious to understand how things worked and how to make them better.
-</p>
-<p>
-That same curiosity drives me today as a self-taught web developer. I’m drawn to building things that work — clean, responsive websites that connect logic with design. Every new project teaches me something: a better way to write code, a smarter layout, a simpler solution.
-</p>
-<p>
-For me, learning has never been about perfection — it’s about consistent progress. I’m always exploring new ideas, breaking them down, and rebuilding them to understand them more deeply. Web development is my craft, but learning is my lifelong habit.
-</p>    
+          <p>
+            I’ve always been the kind of person who learns by doing. As a kid, I used to make my own little light bulbs
+            — wiring LEDs to batteries just to see them glow. I’d fix wall sockets, change lamp holders. I didn’t think
+            of it as “learning” back then; I was just curious to understand how things worked and how to make them better.
+          </p>
 
-<!--         download cvv here
- -->    
-<a href="assets/Marvellous_Resume.pdf" target="_blank" class="btn" title="View my CV In a new tab"><i class="fa-solid fa-download"></i> View my CV</a>
+          <p>
+            That same curiosity drives me today as a self-taught web developer. I’m drawn to building things that work —
+            clean, responsive websites that connect logic with design. Every new project teaches me something: a better way
+            to write code, a smarter layout, a simpler solution.
+          </p>
+
+          <p>
+            For me, learning has never been about perfection — it’s about consistent progress. I’m always exploring new ideas,
+            breaking them down, and rebuilding them to understand them more deeply. Web development is my craft, but learning
+            is my lifelong habit.
+          </p>
+
+          <a href="assets/Marvellous_Resume.pdf" target="_blank" rel="noopener" class="btn"><span>View my CV </span> <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+<span class="sr-only">Open my resume in a new tab</span>
+          </a>
         </div>
-       
-</div>
-</section>
-<!-- project session -->
-<section id="project">
-    <h2>RECENT PROJECT</h2>
-    
-        <div id="projectContainer">
-            <!-- project card 1 -->
-            <div class="card"  data-aos=" zoom-in-up">
-                <figure>
-                    <img src="images/aboutme.jpg" alt="Screenshot of  about me page Project" class="projectImg" loading="lazy">
-                </figure>
-                <div class="content">
-                    <h3>🧭 About Me</h3>
-                    <p>Every project I’ve built connects to who I am, curious, hands-on, and always improving.
-This page gives a little peek into my journey so farand who I am, please go take a look, and get to know me.</p>
-                    <a href="https://about-eixjh8usp-marvellous-projects-3e122c6d.vercel.app/"   class="circle" title="View my Project"><i class="fa-solid fa-arrow-right"></i> </a>
-                </div>
-            </div>
-                        <!-- project card 2 -->
-            <div class="card"  data-aos=" zoom-in-down">
-                <figure>
-                    <img src="images/ratecard.jpg" alt="Screenshot of my RateCard  Homepage Project"  class="projectImg" loading="lazy">
-                </figure>
-                <div class="content">
-                    <h3>💼 Ratecard Project</h3>
-                    <p>
-Designed this as a clear and professional way to showcase my services and pricing.
-Simple, responsive, and straight to the point — check the live link to see how it all comes together.</p>
-                    <a href="https://marveeysrepo.github.io/myRateCard/"  class="circle" title="View my Project"><i class="fa-solid fa-arrow-right"></i></a> </div>
-            </div>
-                        <!-- project card 3 -->
-            <div class="card" data-aos=" zoom-in-left">
-                <figure>
-                    <img src="images/photograph.jpg" alt="Screenshot of  photography page"  class="projectImg" loading="lazy">
-                </figure>
-                <div class="content">
-                    <h3>📸 Photography Project</h3>
-                    <p>
-                        Captured moments, edited with intention, and presented with style.
-I built this to showcase  clean web presentation and card layout, see the live project for yourself.
-</p>
-                    <a href="https://marveeysrepo.github.io/meinFotograf/"  class="circle"><i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-                        <!-- project card 4 -->
-            <div class="card" data-aos=" zoom-in-right" >
+      </div>
+    </section>
+
+    <!-- ===========================
+         Projects
+         =========================== -->
+    <section id="project" class="section">
+      <h2>Recent Projects</h2>
+
+      <div id="projectContainer" class="grid">
+        <!-- Project Card template -->
+        <article class="card" data-aos="zoom-in-up">
+          <figure>
+            <img src="images/aboutme.jpg" alt="Screenshot of About Me project" class="projectImg" loading="lazy" />
+          </figure>
+
+          <div class="content">
+            <h3>🧭 About Me</h3>
+            <p>Every project I’ve built connects to who I am — curious, hands-on, and always improving. This page gives a peek into my journey.</p>
+            <a href="https://about-eixjh8usp-marvellous-projects-3e122c6d.vercel.app/" class="circle" title="View project — About Me">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              <span class="sr-only">Open About Me project</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="card" data-aos="zoom-in-down">
+          <figure>
+            <img src="images/ratecard.jpg" alt="Screenshot of Ratecard homepage project" class="projectImg" loading="lazy" />
+          </figure>
+
+          <div class="content">
+            <h3>💼 Ratecard Project</h3>
+            <p>Designed a clear and professional way to showcase services and pricing. Simple, responsive, and straight to the point.</p>
+            <a href="https://marveeysrepo.github.io/myRateCard/" class="circle" title="View project — Ratecard">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              <span class="sr-only">Open Ratecard project</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="card" data-aos="zoom-in-left">
+          <figure>
+            <img src="images/photograph.jpg" alt="Screenshot of Photography project" class="projectImg" loading="lazy" />
+          </figure>
+
+          <div class="content">
+            <h3>📸 Photography Project</h3>
+            <p>Captured moments, edited with intention, and presented with style — a clean web presentation and card layout.</p>
+            <a href="https://marveeysrepo.github.io/meinFotograf/" class="circle" title="View project — Photography">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              <span class="sr-only">Open Photography project</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="card" data-aos="zoom-in-right">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1669023414166-a4cc7c0fe1f5?w=1000&auto=format&fit=crop&q=60" alt="Weather App screenshot" class="projectImg" loading="lazy" />
+          </figure>
+
+          <div class="content">
             <p class="incoming">Incoming..</p>
+            <h3>Weather App</h3>
+            <a href="#!" class="circle" title="View project — Weather App">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              <span class="sr-only">Open Weather App project</span>
+            </a>
+          </div>
+        </article>
 
-                <figure>
-                    <img src="https://images.unsplash.com/photo-1669023414166-a4cc7c0fe1f5?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y3NzfGVufDB8fDB8fHww" alt="Screenshot of Weather App project"  class="projectImg" loading="lazy">
-                </figure>
-                <div class="content">
-                    <h3>Weather App</h3>
-<!--                     <p>Incoming....</p>
- -->                    <a href=""   class="circle" title="View my Project"><i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-                        <!-- project card 5 -->
-            <div class="card"  data-aos=" zoom-in-left">
-                                <p class="incoming">Incoming..</p>
+        <article class="card" data-aos="zoom-in-left">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1667372393086-9d4001d51cf1?w=1000&auto=format&fit=crop&q=60" alt="Color Switcher project screenshot" class="projectImg" loading="lazy" />
+          </figure>
 
-                <figure>
-                    <img src="https://images.unsplash.com/photo-1667372393086-9d4001d51cf1?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8amF2YXNjcmlwdHxlbnwwfHwwfHx8MA%3D%3D" alt="Screenshot of  Color Switcher App Project"  class="projectImg" loading="lazy">
-                </figure>
-                <div class="content">
-                    <h3>Color Switcher</h3>
-<!--                     <p>Incoming....</p>
- -->                    <a href=""   class="circle" title="View my Project"><i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-                        <!-- project card 6 -->
-            <div class="card"  data-aos=" zoom-in-left">
-                <p class="incoming">Incoming..</p>
-                <figure>
-                    <img src="https://images.unsplash.com/photo-1659079631665-eb95370fb173?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGphdmFzY3JpcHR8ZW58MHx8MHx8fDA%3D" alt="Screenshot of  E-commerce Project Page"  class="projectImg" loading="lazy">
-                </figure>
-                <div class="content">
-                    <h3>E-commerce Website</h3>
-<!--                     <p>Incoming....</p>
- -->                    <a href=""   class="circle" title="View my Project"><i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-</section>
-<!-- contact session -->
-<section id="contact">
-<h2>Reach Out to Me</h2>
-<div>
-    <p>
-        It all started with curiosity, now I build websites with users best experience at heart. 
-    </p>
-    <p>
-        Whether you want to chat about website, or you've a vision, say Hello. 
-    </p>
-    <p> 
-        Let's turn your ideas into something people can click, scroll and love. 
-    </p>
-    <form action="/submit" method="post">
-        <fieldset>
-            <legend>Contact Information</legend>
-            <label for="fullname">Full Name : <span> *</span></label>
-            <input type="text" id="fullname" name="fullname" required placeholder="Enter your full Name" autocomplete="on">
-        
-            <label for="email">Email :<span> *</span></label>
-            <input type="email" id="email" name="email" placeholder="example@email.com" required autocomplete="email">
-        </fieldset>
-        <fieldset>
-            <legend>Start a Conversation</legend>
-            <label for="message">Message :<span> *</span></label>
-            <textarea name="message" id="message" cols="30" rows="5" placeholder="Enter message" required></textarea>
-        </fieldset>
-        <button type="submit" class="submitBtn">Submit</button>
-    </form>
-</div>
-</section>
- </main>
+          <div class="content">
+            <p class="incoming">Incoming..</p>
+            <h3>Color Switcher</h3>
+            <a href="#!" class="circle" title="View project — Color Switcher">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
 
- <!-- footer -->
- <footer>
-<div class="footerDiv">
-  
-<ul id="socialLinks">
-    <li>
-<a href="https://github.com/marveeysrepo"><i class="fa-brands fa-square-github"></i>Github</a>
-    </li>
-    <li>
-        <!-- add twitter link! -->
-<a href="https://web.facebook.com/goodlifebymarveey"><i class="fa-brands fa-square-x-twitter"></i>X</a>
-    </li>
-    <li>
-<a href="https://www.linkedin.com/in/marvellous-ediagbonya/"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
-    </li>
-    <li>
-<a href="https:wa.me/2347053902558"><i class="fa-brands fa-square-whatsapp"></i>WhatsApp</a>
-    </li>
-</ul>
-  <p class="reserved"> &copy; 2025. All Rights Reserved. Marvellous Goodlife </p>
-</div>
+        <article class="card" data-aos="zoom-in-left">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1659079631665-eb95370fb173?w=1000&auto=format&fit=crop&q=60" alt="E-commerce project screenshot" class="projectImg" loading="lazy" />
+          </figure>
 
-    <button id="scrollBtn" class="scrollLink" type="button" aria-label="Scroll to top button">&uArr;</button>
- </footer>
-    <script src="scripts.js"></script>
-    <script src="https://kit.fontawesome.com/184a11b74d.js" crossorigin="anonymous"></script>
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+          <div class="content">
+            <p class="incoming">Incoming..</p>
+            <h3>E-commerce Website</h3>
+            <a href="#!" class="circle" title="View project — E-commerce">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===========================
+         Contact
+         =========================== -->
+    <section id="contact" class="section">
+      <h2>Reach Out to Me</h2>
+    <article class=" contact_container" data-aos="fade-up">
+      <div>
+        <p>If you have a project in mind or just want to say hello, feel free to drop me a message. I’m always open to new opportunities and collaborations.</p>
+        <p>You can also connect with me on social media or check out my resume for more details about my skills and experience.</p>
+      </div>
+      <div>
+        <h3>Contact Me</h3>
+
+        <form action="/submit" method="post" novalidate>
+          <fieldset>
+            <label for="fullname">Full Name: <span aria-hidden="true">*</span></label>
+            <input id="fullname" name="fullname" type="text" required placeholder="Enter your full name" autocomplete="name" />
+
+            <label for="email">Email: <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" required placeholder="example@email.com" autocomplete="email" />
+          </fieldset>
+
+          <fieldset>
+            <label for="message">Message: <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="5" required placeholder="Enter message"></textarea>
+          </fieldset>
+
+          <button type="submit" class="submitBtn">Submit</button>
+        </form>
+      </div>
+    </article>
+    </section>
+  </main>
+
+  <!-- ===========================
+       Footer
+       =========================== -->
+  <footer>
+    <div class="footerDiv">
+      <ul id="socialLinks" aria-label="Social links">
+        <li><a href="https://github.com/marveeysrepo"><i class="fa-brands fa-square-github" aria-hidden="true"></i> <span class="sr-only">Github</span>Github</a></li>
+        <li><a href="https://web.facebook.com/goodlifebymarveey"><i class="fa-brands fa-square-facebook" aria-hidden="true"></i> <span class="sr-only">Facebook</span>Facebook</a></li>
+        <li><a href="https://www.linkedin.com/in/marvellous-ediagbonya/"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> <span class="sr-only">LinkedIn</span>LinkedIn</a></li>
+        <li><a href="https://wa.me/2347053902558"><i class="fa-brands fa-square-whatsapp" aria-hidden="true"></i> <span class="sr-only">WhatsApp</span>WhatsApp</a></li>
+      </ul>
+
+      <p class="reserved">&copy; 2025. All Rights Reserved. Marvellous Goodlife</p>
+
+      <button id="scrollBtn" class="scrollLink" type="button" aria-label="Scroll to top button">&#8593;</button>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/184a11b74d.js" crossorigin="anonymous" defer></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
   <script>
-    AOS.init();
+    // init AOS after it loads
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.AOS) AOS.init();
+    });
   </script>
-</body> 
+  <script src="scripts.js" ></script>
+</body>
 </html>

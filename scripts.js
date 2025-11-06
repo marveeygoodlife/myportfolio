@@ -1,11 +1,11 @@
 'use strict'
-
-const nav = document.querySelector("nav");
+const ul = document.querySelector("#ul");
 const hamburgerMenu = document.querySelector("#hamburgerMenu");
 const scrollBtn = document.querySelector("#scrollBtn")
+
 /* reusable function */
 function closeMenu(){
-    nav.classList.remove('active');
+    ul.classList.remove('active');
     hamburgerMenu.setAttribute('aria-expanded', "false");
 };
 
@@ -14,7 +14,7 @@ function dynamicToggle() {
     /* get element from dom */
 const themeToggle = document.querySelector("#themeToggle");
 const body = document.documentElement;
-    const ulLinks = nav.querySelectorAll('a');
+    const ulLinks = ul.querySelectorAll('a');
 
     
     /* open nav */
@@ -23,11 +23,12 @@ const body = document.documentElement;
         /* aria-expanded logic for accessibility*/
         const expanded = hamburgerMenu.getAttribute("aria-expanded") === 'true';
         hamburgerMenu.setAttribute("aria-expanded", !expanded);
-        nav.classList.toggle('active');  
+        ul.classList.toggle('active');  
+        console.log("click nav menu")
     });
 
     /* close nav on click of links */
-    nav.addEventListener("click", (e) => {
+    ul.addEventListener("click", (e) => {
         if (e.target.matches('a')) {
             e.preventDefault();
             const targetId = e.target.getAttribute("href");
@@ -36,8 +37,8 @@ const body = document.documentElement;
             setTimeout(() => {
                 document.querySelector(targetId).scrollIntoView({ behaviour: "smooth", });
             }, 300)
-        }
-    })
+        };
+    });
 
 /* load saved theme from local storage */
     const currentTheme = localStorage.getItem('theme');
@@ -46,6 +47,7 @@ if (currentTheme === 'darkMode') {
 };
 /* toggle dark mode */
     themeToggle.addEventListener("click", () => {
+               
         body.classList.toggle("darkMode");
         if (body.classList.contains('darkMode')) {
             localStorage.setItem('theme', "darkMode");
@@ -57,10 +59,9 @@ if (currentTheme === 'darkMode') {
 
 /* close nav when user clicks outside it */
 document.addEventListener("click", (e) => {
-  
-    const navOpen = nav.classList.contains('active');
+    const navOpen = ul.classList.contains('active');
     const clickedToggle = hamburgerMenu.contains(e.target);
-    const clickedNav = nav.contains(e.target);
+    const clickedNav = ul.contains(e.target);
 
     /* check if nav menu is open and user  clicks outside my nav || !nav button then close nav, reset attribute*/
     if (navOpen && !clickedNav && !clickedToggle) {
@@ -70,15 +71,59 @@ document.addEventListener("click", (e) => {
 
 /* show scroll to top button */
 window.addEventListener("scroll", () => {
-     const scrollPosition = window.scrollY;
+    const scrollPosition = window.scrollY;
     if (scrollPosition > 1000) {
         scrollBtn.classList.add("showScroll");
     } else {
         scrollBtn.classList.remove("showScroll");
-    }; 
+    };
 });
 
 /* scroll to top */
 scrollBtn.addEventListener("click", () => {
-     window.scrollTo({top: 0, behaviour: "smooth"})
- })
+    window.scrollTo({ top: 0, behaviour: "smooth" })
+});
+
+
+const terminalbox = document.getElementById('skillTerminal')
+ let hasType = false;
+
+const text = `
+> skills  --list
+HTML
+CSS
+JAVASCRIPT
+REACT
+GIT
+`;
+const cursor = document.createElement("span");
+cursor.classList.add("cursor");
+function typeText(str, element, speed = 50) {
+
+    let index = 0;
+    function type() {
+        if (index < str.length) {
+            element.textContent += str[index];
+            index++;
+            element.appendChild(cursor);
+
+            setTimeout(type, speed);
+        } 
+    }
+                element.appendChild(cursor);
+
+    type();
+}
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasType) {
+            typeText(text, terminalbox, 50);
+            hasType = true;
+        }
+    }, { threshold: 0.5 });
+});
+observer.observe(terminalbox);
+
+
+console.log("connecte")

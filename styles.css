@@ -1,0 +1,647 @@
+/* ==========================================================
+   1. ROOT VARIABLES — COLORS, SPACING, TYPOGRAPHY
+   ========================================================== */
+
+:root {
+  /* Color System */
+  --surface: #ffffff;
+  --surface-alt: #f5f5f7;
+  --text: #111111;
+  --text-subtle: #555555;
+  --border: #e5e5e7;
+  --accent: #4f7df5;
+  --accent-hover: #3a63cc;
+
+  --hero-bg: #fafafa;
+  --card-bg: var(--surface-alt);
+  --terminal-bg: #0d0d0d;
+  --terminal-text: #e0e0e0;
+
+  --incoming-badge: #ffb300;
+  --incoming-text: #111;
+
+  --link: var(--accent);
+  --link-hover: var(--accent-hover);
+
+  /* Layout + Spacing */
+  --radius: 10px;
+  --radius-2: 15px;
+  --transition: 0.25s ease;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+
+  /* Typography */
+  --font-sans:  'Inter', 'OpenSans', 'Segoe UI', sans-serif;
+  --heading-font: 'SpaceGrotesk-Bold', 'Oswald-bold', Roboto;
+}
+
+.darkMode {
+  --surface: linear-gradient(to left, #111827, #1e293b);
+  --surface-alt: #1118275e;
+  --text: #f0f0f0;
+  --text-subtle: #c2c2c2;
+  --border: #2a2a2a;
+  --accent: #6b9aff;
+  --accent-hover: #5582e0;
+  --hero-bg: #1118275e;
+
+  --card-bg: #1118275e;
+  --terminal-bg: #1118275e;
+  --terminal-text: #d0d0d0;
+  --incoming-badge: #ffe08a;
+  --incoming-text: #111;
+
+  --link: var(--accent);
+  --link-hover: var(--accent-hover);
+}
+
+/* fonts  */
+@font-face {
+    font-family: 'Oswald-Bold';
+    src: url('/assets/fonts/Oswald-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'SpaceGrotesk-Bold';
+    src: url('/assets/fonts/SpaceGrotesk-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('/assets/fonts/Inter_18pt-Medium.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('/assets/fonts/OpenSans-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+}
+/* ==========================================================
+   2. GLOBAL RESET + BASE STYLES
+   ========================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+}
+main {
+  display : flex;
+  flex-direction: column;
+  gap: 5rem;  
+  width: 90%;
+  margin: 0 auto;
+    max-width: 1200px;
+     padding: 20px;
+     align-items: center;
+     justify-content: center;
+  }
+/* Typography defaults */
+  section h2, h3 {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--space-2);
+  font-family: var(--heading-font);
+}
+h1 {
+  text-align: left;
+  font-size: 1rem;
+}
+  h2 {
+  font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem);
+}
+p {
+  margin-bottom: var(--space-3);
+  color: var(--text-subtle);
+}
+
+/* Images */
+figure {
+  width: fit-content;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#about   figure {
+  border-radius: 20px;
+ }
+#about figure img {
+  border-radius: inherit;
+}
+img {
+   max-width: 100%;
+  display: block;
+}
+
+/* ==========================================================
+   3. ACCESSIBILITY — SKIP LINK, FOCUS STATES
+   ========================================================== */
+
+.skip-link {
+  position: absolute;
+  top: -70px;
+  left: 0;
+  padding: var(--space-2);
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  z-index: 999;
+  transition: top var(--transition);
+}
+.skip-link:focus {
+  top: 10px;
+  left: 15px
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 5px;
+}
+
+/* ==========================================================
+   4. HEADER + NAVIGATION
+   ========================================================== */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: var(--space-1);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+/* Navigation Menu */
+nav ul {
+  display: flex;
+  gap: var(--space-3);
+  list-style-type: none;
+  color: var(--surface);
+
+}
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  transition: var(--transition);
+}
+nav a:hover {
+  color: var(--accent);
+}
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+/* Hamburger */
+#hamburgerMenu {
+  display: none;
+}
+ 
+@media (max-width: 850px) {
+  nav ul {
+     position: fixed;
+    left: 0;
+    top: 7rem;
+    padding: 50px;
+    background-color: #111827;
+    z-index: 10;
+    transition: transform .3s ease-in-out, opacity .3s ease-in-out, border .3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    opacity:0 ;
+    transform: translateX(-100%);
+    display: block;
+  }
+  nav ul.active {
+border-bottom: 1px solid #fff;
+transform: translateX(0);
+opacity: 1;
+ }
+  #hamburgerMenu {
+      width: fit-content;
+     cursor: pointer;
+    transition: border .3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: transparent;
+    margin-right: 2rem;
+      display: grid;
+      place-content: center;
+     background-color: transparent;
+     padding: 3px;
+  }
+  
+span.bar {
+    width: 20px;
+    height: 3px;
+    background: var(--incoming-text);
+    margin: 2px;
+}
+.darkMode span.bar {
+    background: #f0f0f0;
+}
+nav #ul li a {
+  color: white;
+}
+nav #ul li a:hover {
+  color: var(--accent);
+}
+
+}
+/* Dark mode  */
+
+.toggle-container{
+    width: fit-content;
+    cursor: pointer;
+    background: transparent;
+    border: transparent;
+    outline: transparent;
+}
+#themeToggle {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+.sun-icon { color: white;
+  font-size: 1.5rem;
+    display: none;
+}
+.moon-icon {
+    font-size: 1.5rem;
+
+}
+.darkMode .moon-icon {
+    display: none;
+}
+.darkMode .sun-icon {
+    display: inline-block;
+}
+/* 
+==========================================================
+   5. HERO SECTION
+   ========================================================== */
+a {
+  text-decoration: none;
+}
+#hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: var(--space-5) var(--space-3);
+  gap: var(--space-4);
+  background: var(--hero-bg);
+}
+
+.hero_content {
+  max-width: 600px;
+ }
+
+#about .hero_content h1, h2.titleh2, p {
+text-align: left;
+margin: 0 0 var(--space-1) 0;
+ line-height: 1;
+}
+
+.hero_content p {
+  color: var(--text-subtle);
+}
+
+/* Buttons */
+.btn, .submitBtn {
+  background: var(--accent);
+  color: #fff;
+  padding: 5px 25px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+.btn:hover {
+  background: var(--accent-hover);
+}
+.getintouch {
+  margin:2rem 0;
+   }
+ .getintouch .touchbtn {
+   margin-right: 10px;
+}
+.herobtn {
+  background: var(--accent);
+   display: inline-block;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  margin: 0 10px 0 0;
+  text-decoration: none;
+  text-align: center;
+  font-size: 15px;
+  transition: var(--transition);
+}
+
+.herobtn:hover {
+  background: var(--accent-hover);
+}
+
+.getintouch .fa-brands {
+    width: inherit;
+    display: grid;
+    place-content: center;
+    height: inherit;
+    padding: inherit;
+    border-radius: 50%;
+   }
+
+/* ==========================================================
+   6. SKILLS SECTION — TERMINAL UI
+   ========================================================== */
+
+#skill {
+  padding: var(--space-5) var(--space-3);
+}
+
+#terminal {
+  background: var(--terminal-bg);
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  margin-top: var(--space-3);
+  border: 1px solid var(--border);
+}
+
+#skillTerminal {
+  font-family: monospace;
+  color: var(--terminal-text);
+  white-space: pre-wrap;
+}
+
+/* ==========================================================
+   7. ABOUT SECTION
+   ========================================================== */
+
+#about {
+  padding: var(--space-5) var(--space-3);
+}
+#about .btn {
+    margin-top: 1.3rem;
+}
+.about_content {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.about_text p {
+  color: var(--text-subtle);
+}
+
+/* ==========================================================
+   8. PROJECTS SECTION
+   ========================================================== */
+
+#project {
+  padding: var(--space-5) var(--space-3);
+}
+
+#projectContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: var(--space-4);
+}
+
+/* Project Card */
+.card {
+  background: var(--card-bg);
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.incoming {
+  background: var(--incoming-badge);
+  color: var(--incoming-text);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  width: auto;
+  display: inline-block;
+  border-radius: 5px;
+  margin-bottom: var(--space-2);
+}
+
+/* Icon Button (arrow) */
+.circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+}
+.circle:hover {
+  background: var(--accent-hover);
+}
+
+/* ==========================================================
+   9. CONTACT SECTION
+   ========================================================== */
+
+#contact {
+  padding: var(--space-5) var(--space-3);
+}
+.contact_container {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+form {
+  margin-top: var(--space-4);
+  max-width: 500px;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+form label {
+    display: block;
+    margin: .75rem 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+fieldset {
+    border: none;
+    margin-bottom: .75em;
+}
+ 
+input,
+textarea {
+  width: 100%;
+  padding: var(--space-2);
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+}
+form span {
+    color: red;
+}
+.submitBtn {
+    display: block;
+     padding: 0.75rem 1rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    margin: .75em auto 0 auto;
+     border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 50%;
+    transition: background-color .3s ease-in-out, transform 0.3s ease-in-out, color .2s ease-in-out;
+}
+.submitBtn:hover {
+  background: var(--accent-hover);
+}
+
+/* ==========================================================
+   10. FOOTER
+   ========================================================== */
+
+footer {
+  padding: var(--space-4);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+#socialLinks li a  {
+  width: fit-content;
+  display: flex;
+  gap: var(--space-3);
+   margin-bottom: var(--space-2);
+  text-decoration: none;
+  color: var(--text);
+}
+
+.reserved {
+  text-align: center;
+  margin-top: var(--space-2);
+  color: var(--text-subtle);
+}
+footer ul li {
+    margin: 1rem auto;
+    list-style-type: none;
+}
+#socialLinks li i {
+    margin-right: 2px;
+    font-size: 1.3rem;
+}
+#socialLinks li a:hover {
+     text-decoration: underline;
+     color: var(--accent);
+}
+/* Scroll to top */
+.scrollLink {
+  position: fixed;
+    right: 2rem;
+    bottom: 3rem;
+    border-radius: 50%;
+    height: 40px;
+    font-size: 1.1rem;
+    width: 40px;
+    padding: 10px 12px;
+    background-color: var(--accent);
+    z-index: 0;
+    outline: transparent;
+    border: transparent;
+    cursor: pointer;
+    visibility: hidden;
+}
+ 
+.showScroll {
+    transition: visibility .3s ease-in-out, z-index .3s ease-in-out;
+visibility: visible;
+z-index: 600;
+
+}
+#scrollBtn:hover {
+  background: var(--accent-hover);
+}
+
+/* ==========================================================
+   11. MEDIA QUERIES — GENERAL RESPONSIVENESS
+   ========================================================== */
+
+@media (min-width: 1024px) {
+  
+  .hero_content, .about_text {
+    max-width: 700px;
+    margin: 5rem auto;
+   }
+   .hero {
+    padding:20px;
+   }
+} 
+
+ header svg text {
+      font-family: 'SpaceGrotesk-Bold', 'Oswald-Bold', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      fill: var(--incoming-text);
+    }
+.darkMode header svg text {
+      fill: #f0f0f0;
+    }
+    /* screen-reader only helper */
+    .sr-only {
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+      border: 0;
+      padding: 0;
+      margin: -1px;
+    }
+
+    section {
+      width: 100%;
+      margin: 5rem auto 2rem auto;
+    }

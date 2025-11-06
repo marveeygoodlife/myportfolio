@@ -6,6 +6,20 @@
 }
 /* fonts  */
 @font-face {
+    font-family: 'Oswald-Bold';
+    src: url('/assets/fonts/Oswald-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'SpaceGrotesk-Bold';
+    src: url('/assets/fonts/SpaceGrotesk-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+    font-weight: bold;
+}
+@font-face {
     font-family: 'Merriweather';
     src: url('/assets/fonts/Merriweather_24pt-ExtraBold.ttf') format('truetype');
     font-style: normal;
@@ -59,10 +73,11 @@
     --accent: #fde047;    
     --primary-color: #6366f1; 
     --secondary-text-color: #4b5563; 
-    --background-color: #111827; 
+    --background-color: linear-gradient(to left, #111827, #1e293b); 
     --primary-text-color: #f3f4f6; 
     --card-bg: #1f2937;
     --border: #374151;
+    --h1-bg :#111827;
     --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.25);
     --cardShadow-hover:0 8px 20px rgba(0, 0, 0, 0.6),
 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -84,6 +99,7 @@
     border: transparent;
     outline: transparent;
 }
+
 .toggle-container:focus {
 outline: 2px solid var(--accent);
 }
@@ -111,9 +127,9 @@ body {
     grid-template-rows: 100px auto max-content;
     grid-template-columns: 1fr;
         font-family: 'OpenSans', system-ui, -apple-system, serif;
-    background-color: var(--background-color);
+    background: var(--background-color);
     color: var(--primary-text-color);
-    line-height: 1.3;
+    line-height: 1.5;
 }
 /* header */
 header {
@@ -214,42 +230,48 @@ nav ul li a:hover {
     margin: 3rem auto;
 } 
 /* heading */
- h1, h2, h3 {
-    font-family: 'PlayfairDisplay','Merriweather',  Roboto;
-    text-shadow: 2px 2px 2px #aaa;
-}
-h1, h2 {
-margin: 3rem 0;
-}
-h3 {
-    margin-top: 2rem;
+ h1, h2, h3, h4 {
+    font-family: 'SpaceGrotesk-Bold','Oswald-bold',  Roboto;
+    color: var(--primary-color);
     text-transform: uppercase;
+    font-weight: bold;
 }
-h2, h3 {
+section h2, h3 {
     text-align: center;
+   margin: 1rem 0;
 }
-h1 {
-   text-shadow: 4px 4px 4px #aaa;
-  line-height: 1.3;
-  font-size: 2.8rem;
-  text-decoration: left;
+h2 {
+    font-size: clamp(1.5rem, 3vw + 0.5rem, 2.5rem);}
+
+h3 {
+    margin-top: 1rem;
+}
+
+h1 { 
+   font-size: 1rem;
+   width: fit-content;
 }
 /* button style */
 .btn {
     display: inline-block;
     background-color: var(--bg);
+    text-align: center;
     color: var(--light);
-    padding: 0.75rem 1rem;
-    border-radius: 15px;
-    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 20px;
     text-decoration: none;
     transition: background-color .3s ease-in-out, transform 0.3s ease-in-out, color .2s ease-in-out;
-    margin-bottom: .6rem;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 4px 10px 4px 0;
+}
+i {
+    text-align: center;
 }
 .btn:hover, .submitBtn:hover {
-    background-color: #4f46e5;
-    color: #ffffff;
-    transform: translateY(-5px);
+     color: #ffffff;
+         opacity: 0.7;
+    transform: translateY(-4px);
 }
 a:active {
     color: var(--accent);
@@ -272,15 +294,73 @@ img {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    box-shadow: var(--card-shadow);
-    padding: 15px;
+    align-items: center;
+    justify-items: center;}
+
+.getintouch {
+    margin: 2rem 0;
 }
-#hero:hover, .about_content:hover {
-    box-shadow: var(--cardShadow-hover);
+.herobtn {
+    border-radius: 9999px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 30px;
+    margin: 0 auto;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color .3s ease-in-out, transform 0.3s ease-in-out, color .2s ease-in-out;
+}
+ 
+.getintouch .fa-brands {
+   padding: 10px;
+   width: 40px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 10px;
+    font-size: 20px;}
+
+    
+.getintouch .fa-brands:hover {
+    transform: translateY(-4px);
+        opacity: 0.7;
+
+}
+.getintouch .fa-x-twitter {
+    background: #111;
+    color: white;
+}
+
+.getintouch .fa-linkedin-in {
+  background: #007bb5;
+  color: white;
+}
+.getintouch .fa-whatsapp {
+    background: #25d366;
+    color: white;
 }
 /* Skills section */
+ 
 div#skillsContainer {
-    width: 90%;
+    background: #1f2937;
+    padding:  1rem;
+    color: #ffffff;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+.skillCard {
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid gold;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    transition: transform .3s ease-in-out;
+}
+.skillCard:hover {
+    transform: scale(1.05);
 }
 
 div#skillsContainer p {
@@ -321,10 +401,7 @@ box-shadow: var(--card-shadow);
 transition: box-shadow .3s ease, transform .3s ease;
 min-width: 0;
 }
-i {
-    margin-right: 10px;
-    font-size: 1.3rem;
-}
+
 i.skillIcon {
     gap: 30px;
 font-size: 2rem;
@@ -515,8 +592,15 @@ footer ul li {
     margin: 1rem auto;
     list-style-type: none;
 }
-
+#socialLinks li i {
+    margin-right: 3px;
+}
 /* tablet view */
+@media screen and (max-width: 940px) {
+    .title {
+        margin-left: 1.3rem;
+    }
+}
  @media screen and (min-width: 700px) {
  #projectContainer {
  grid-template-columns: repeat(2, 1fr);
@@ -525,7 +609,6 @@ footer ul li {
 #hero, .about_content {
      grid-template-columns: repeat(2, 1fr);
 border: 2px solid transparent;
-padding: 10px;
 gap: 30px;
 }
 .hero_content {
@@ -583,4 +666,32 @@ nav ul { display: flex;
     max-width: 100%;
      margin: 0;
     object-fit: cover;
+}
+
+#terminal {
+    font-family: "Oswald-Bold";
+    font-size: 1.2rem;
+    color: #ffffff;
+    background: #0d1117;
+    padding:  0 20px 10px 20px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    height: auto;
+}
+
+.cursor {
+     width: 5px;
+  height: 1rem;
+  background: #ff0000;
+  margin-left: 3px;
+  display: inline-block;
+   animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+
 }
